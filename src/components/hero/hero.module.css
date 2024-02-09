@@ -1,0 +1,158 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6% 5% 4% 5%;
+    margin-bottom: 1.5rem;
+    
+}
+
+.heroLeft{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.heroLeft h1{
+    font-size: 50px;
+}
+
+.heroLeft p{
+    max-width: 400px;
+}
+
+.heroRight{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+
+}
+
+.heroRight img{
+    position: relative;
+    display: flex;
+    transition: 0.5s ease all;
+}
+
+
+/* .heroRight img:hover.innerCard{
+        opacity: 100%;
+    } */
+
+
+.innerCard{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #ffffff;
+    width: 80%;
+    height: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(14%);
+    transition: 0.3s all ease;
+}
+
+.innerCard:hover{
+    opacity: 100%;
+    width: 85%;
+}
+
+
+.innerCard h3{
+    color: #fff;
+    font-size: 35px;
+}
+
+@media(max-width: 800px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: 100vh;
+        margin-top: 6rem;
+    }
+
+    .heroLeft{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heroLeft h1{
+        font-size: 25px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .heroLeft p{
+        text-align: center;
+    }
+
+    /* .heroLeft p{
+        text-align: center;
+    } */
+
+    .heroRight{
+        height: 320px;
+        margin-bottom: 2rem;
+    }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  background: #000;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  background: #000000;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translate(-7px, -7px);
+}
+
+.btn:hover::after {
+  transform: translate(3px, 3px);
+}
+
+.btn:hover::before {
+   transform: translate(7px, 7px);
+}
+
+.heroRight:hover img{
+    transform: scale(1.1);
+}

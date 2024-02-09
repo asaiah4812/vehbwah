@@ -13,7 +13,6 @@
 
 @media(max-width:1200px){
     .divider{
-        height: 100vh;
         display: grid;
         margin-bottom: 3rem;
     }
